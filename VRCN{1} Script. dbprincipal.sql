@@ -38,7 +38,7 @@ CREATE TABLE usuarios (
 
 CREATE TABLE proveedores (
 	id_proveedor INT AUTO_INCREMENT PRIMARY KEY,
-	nombre_proveedor VARCHAR(50) NOT NULL,
+	nombre VARCHAR(50) NOT NULL,
     email VARCHAR(10)
 );
 CREATE TABLE codigo_producto (
