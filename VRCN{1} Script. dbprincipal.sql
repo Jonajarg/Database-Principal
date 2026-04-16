@@ -183,8 +183,7 @@ CREATE TABLE detalle_compra_material (
 CREATE TABLE partidos (
     id_partido INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(70) NOT NULL,
-    hora TIME NOT NULL,
-    fecha DATE NOT NULL,
+    fecha_hora DATETIME NOT NULL,
     estado_partido BOOLEAN DEFAULT TRUE
 );
 CREATE TABLE detalle_partido (
