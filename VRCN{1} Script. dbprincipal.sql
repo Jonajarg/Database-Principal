@@ -65,7 +65,6 @@ CREATE TABLE productos (
 	id_producto INT AUTO_INCREMENT PRIMARY KEY,
     id_cd_prod INT NOT NULL,
     nombre VARCHAR(50) NOT NULL,
-    cantidad INT NOT NULL,
     precio_venta INT NOT NULL,
     fecha_registro DATETIME NOT NULL,
     FOREIGN KEY (id_cd_prod) REFERENCES codigo_producto(id_cd_prod)
@@ -126,7 +125,6 @@ CREATE TABLE materiales (
 	id_material INT AUTO_INCREMENT PRIMARY KEY,
     id_cd_mate INT NOT NULL,
     nombre VARCHAR(50) NOT NULL,
-    cantidad INT NOT NULL,
     fecha_registro DATE NOT NULL,
     FOREIGN KEY (id_cd_mate) REFERENCES codigo_material(id_cd_mate)
 );
