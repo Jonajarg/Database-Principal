@@ -187,7 +187,7 @@ CREATE TABLE partidos (
     estado_partido BOOLEAN DEFAULT TRUE
 );
 CREATE TABLE detalle_partido (
-    id_detalle_partido INT AUTO_INCREMENT PRIMARY KEY,
+    id_det_partido INT AUTO_INCREMENT PRIMARY KEY,
     id_partido INT NOT NULL,
     equipo_visitante VARCHAR(30) NOT NULL,
     clima VARCHAR(27) NULL,
@@ -215,10 +215,10 @@ CREATE TABLE producto_vendedor (
 CREATE TABLE material_vendedor (
     id_mate_ven INT AUTO_INCREMENT PRIMARY KEY,
     id_local_mate INT NOT NULL,
-    id_producto INT NOT NULL,
+    id_material INT NOT NULL,
     cantidad_asignada INT NOT NULL,
     cantidad_restante INT NOT NULL,
-    FOREIGN KEY (id_producto) REFERENCES productos(id_producto),
+    FOREIGN KEY (id_material) REFERENCES materiales(id_material),
     FOREIGN KEY (id_local_mate) REFERENCES inventario_local_material(id_local_mate)
 );
 CREATE TABLE asistencias (
@@ -321,7 +321,6 @@ CREATE TABLE hoja_trabajo (
     fecha_hoja DATE NOT NULL,
     fondo_inicial INT NOT NULL,
     total_vendido INT NOT NULL,
-    total_abonos INT NOT NULL,
     total_devoluciones INT NOT NULL,
     total_comisiones INT NOT NULL,
     total_efec_entragado INT NOT NULL,
@@ -334,7 +333,7 @@ CREATE TABLE hoja_trabajo (
     FOREIGN KEY (id_devolucion) REFERENCES devoluciones(id_devolucion)
 );
 CREATE TABLE detalle_hoja_producto (
-    id_detalle_produ INT AUTO_INCREMENT PRIMARY KEY,
+    id_det_hoja_produ INT AUTO_INCREMENT PRIMARY KEY,
     id_hoja INT NOT NULL,
     id_producto INT NOT NULL,
     id_venta INT NOT NULL,
